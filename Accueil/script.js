@@ -1,8 +1,12 @@
 const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
+var task = "task";
+var i = 0;
 
 addTaskBtn.addEventListener("click", addTask);
+
+
 
 function addTask() {
     const taskText = taskInput.value.trim();
@@ -14,6 +18,9 @@ function addTask() {
         taskInput.value ="";
 
         const deleteBtn = document.createElement("button");
+        const checkBox = document.createElement("input");
+        checkBox.setAttribute("type", "checkbox");
+        listItem.appendChild(checkBox);
         deleteBtn.textContent = "Supprimer";
         listItem.appendChild(deleteBtn);
         deleteBtn.addEventListener("click", () => {
@@ -23,4 +30,7 @@ function addTask() {
     } else {
         alert("Veuillez entrer une tâche valide.");
     }
+
+localStorage.setItem(task.concat(i), taskText);
+i++
 }
