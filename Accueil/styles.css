@@ -1,11 +1,56 @@
 body {
-    font-family: Arial, sans-serif;
+    background-color: rgb(239, 249, 252);
 }
 
-.container {
+h1 {
+    font-family:sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.inputContainer {
     max-width: 400px;
     margin: 50px auto;
     border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px black;
+    padding-bottom: 20px;
+}
+
+#saisie {
+    display: flex;
+    justify-content: center;
+}
+
+#taskInput {
     border-radius: 5px;
-    background-color: #f9f9f9;
+    padding: 5px;
+}
+
+#addTaskBtn {
+    margin-left: 20px;
+}
+
+.listContainer {
+    max-width: 400px;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px black;
+}
+
+ul:empty {
+    display: none;
+}
+
+li {
+    margin: 10px 0 10px 0;
+    list-style-type: none;
+}
+
+ul button {
+    margin-left: 20px;
+    padding: 3px;
 }
