@@ -32,6 +32,11 @@ h1 {
     margin-left: 20px;
 }
 
+#delTask {
+    background-color: red;
+    border-radius: 20px;
+}
+
 .listContainer {
     max-width: 400px;
     margin: 50px auto;

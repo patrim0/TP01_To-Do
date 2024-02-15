@@ -22,13 +22,17 @@ function addTask() {
 
         checkBox.addEventListener("change", () => {
             if (checkBox.checked) {
-                listItem.setAttribute("style", "text-decoration-line: line-through;")
+                for (let i = 0; i < 2; i++ ) {
+                    listItem.setAttribute("style", "text-decoration-line: line-through;", "color: lightgray;")
+                }
+
             } else {
                 listItem.setAttribute("style", "text-decoration-line: none;")
             }
         });
 
         const deleteBtn = document.createElement("button");
+        deleteBtn.setAttribute("id", "delTask")
         deleteBtn.textContent = "Supprimer";
         listItem.appendChild(deleteBtn);
 
