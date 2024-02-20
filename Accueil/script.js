@@ -37,6 +37,7 @@ function addTask() {
         listItem.appendChild(deleteBtn);
 
         deleteBtn.addEventListener("click", () => {
+            localStorage.removeItem();
             listItem.remove();
         });
 
@@ -46,4 +47,8 @@ function addTask() {
 
 localStorage.setItem(task.concat(i), taskText);
 i++
+}
+
+function delTask () {
+    
 }
