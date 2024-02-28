@@ -10,6 +10,7 @@ function addTask() {
     const taskText = taskInput.value.trim();
 
     if (taskText !== "") {
+
         const listItem = document.createElement("li");
 
         listItem.textContent = taskText;
@@ -32,13 +33,24 @@ function addTask() {
         });
 
         const deleteBtn = document.createElement("button");
-        deleteBtn.setAttribute("id", "delTask")
+        deleteBtn.setAttribute("id", "delTask");
         deleteBtn.textContent = "Supprimer";
         listItem.appendChild(deleteBtn);
 
         deleteBtn.addEventListener("click", () => {
-            localStorage.removeItem();
             listItem.remove();
+        });
+
+        const modTask = document.createElement("button");
+        modTask = setAttribute("type", "text");
+        modTask = setAttribute("id", "taskInput");
+        modTask.textContent = "Modifier"
+        modTask = setAttribute("placeholder", listItem.textContent);
+        listItem.appendChild(modTask);
+
+        listItem.addEventListener("click", () => {
+            listItem.appendChild(modTask);
+            
         });
 
     } else {
@@ -47,8 +59,4 @@ function addTask() {
 
 localStorage.setItem(task.concat(i), taskText);
 i++
-}
-
-function delTask () {
-    
 }

@@ -1,26 +1,25 @@
 ////////////////// Obtenez le modal d'inscription ///////////////////////
-function userInfo (){
-  var loginName = localStorage.getItem("userName");
-  var loginPw = localStorage.getItem("userPw");
-
-  var userNameLog = document.getElementById("username-login").value;
-  var userPwLog = document.getElementById("psw-login").value;
-
-
-
-  if (loginPw == userPwLog && loginName == userNameLog) {
-    window.location='../Accueil/accueil.html';
+function userInfo (event){
+  event.preventDefault()
+  const userNameLog = document.getElementById("usernameLogin").value;
+  const userPwLog = document.getElementById("pswLogin").value;
+  const loginName = localStorage.getItem("userName");
+  const loginPw = localStorage.getItem("userPw");
+  if ( (userPwLog === loginPw) && (userNameLog === loginName)) {
+    document.location.href='../Accueil/accueil.html';
+    // window.location.href = "../Accueil/accueil.html";
   } else {
     alert("Nom ou mot de passe invalide.");
   }
 }
 
-function userRegist (){
-  var userNameReg = document.getElementById("username").value;
-  var userPwReg = document.getElementById("psw").value;
-
+function userRegist (event){
+  event.preventDefault()
+  const userNameReg = document.getElementById("username").value;
+  const userPwReg = document.getElementById("psw").value;
   localStorage.setItem("userName", userNameReg);
   localStorage.setItem("userPw", userPwReg);
+  document.location.href='../Accueil/accueil.html';
 }
 
 /* function closeModal () {

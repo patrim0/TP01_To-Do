@@ -37,7 +37,7 @@
 
         <div class="clearfix">
             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Annuler</button>
-            <button type="submit" class="signupbtn" onclick="userRegist()">Confirmer</button>
+            <button type="submit" class="signupbtn" onclick="userRegist(event)">Confirmer</button>
         </div>
         </div>
     </form>
@@ -51,17 +51,19 @@
     <form class="modal-content animate" action="" method="post">
         <div class="imgcontainer">
         <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-        <img src="Images/img_avatar2.png" alt="Avatar" class="avatar">
+        <img src="../Images/img_avatar2.png" alt="Avatar" class="avatar">
         </div>
 
         <div class="container">
-        <label for="username-login"><b>Nom d'utilisateur</b></label>
-        <input type="text" placeholder="Saisissez votre nom d'utilisateur" name="username-login" id="username-login" required>
-        <label for="psw-login"><b>Mot de passe</b></label>
-        <input type="password" placeholder="Entrer le mot de passe" name="psw-login" id="psw-login" required>
-
+        <label for="uname"><b>Nom d'utilisateur</b></label>
+        <input type="text" placeholder="Saisissez votre nom d'utilisateur" name="uname" id="usernameLogin" required>
+        <label for="psw"><b>Mot de passe</b></label>
+        <input type="password" placeholder="Entrer le mot de passe" name="psw" id="pswLogin" required>
+        <!-- <a href="accueil.html">
+            <button type="submit" onclick="window.location.href==accueil.html">Login</button>
+        </a> -->
         </div>
-        <button id="sub" onclick="userInfo()">Se connecter</button>
+        <button id="sub" onclick="userInfo(event)">Se connecter</button>
 
         <label>
             <input type="checkbox" checked="checked" name="remember"> chmod Souviens-toé d'moé
@@ -75,6 +77,6 @@
 
     </div>
 </div>
-    <script src="index.js"></script>
+    <script src="../JS/index.js"></script>
     </body>
 </html>
