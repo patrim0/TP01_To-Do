@@ -5,9 +5,9 @@ champ de texte et en appuyant sur un bouton "Ajouter".~~
 2. **FINI** <br> ~~Marquer une tâche comme terminée : Les utilisateurs peuvent cliquer sur une tâche pour la marquer comme
 terminée. Cela entraînera un changement de style visuel pour indiquer que la tâche est complétée.~~
 ---
-3. **TODO** <br> Modifier le texte d'une tâche existante : Les utilisateurs peuvent modifier le texte d'une tâche existante en
+3. **FINI** <br> ~~Modifier le texte d'une tâche existante : Les utilisateurs peuvent modifier le texte d'une tâche existante en
 cliquant sur le bouton d'édition. Le texte apparaîtra dans la zone de saisi de texte pour permettre la
-modification du texte de la tâche.
+modification du texte de la tâche.~~
 ---
 4. **FINI** <br> ~~Supprimer une tâche : Les utilisateurs peuvent supprimer une tâche de la liste en cliquant sur un bouton de
 suppression associé à chaque tâche. La tâche sera immédiatement retirée de la liste.~~
