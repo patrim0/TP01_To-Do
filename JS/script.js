@@ -19,6 +19,7 @@ function addTask() {
 
         const checkBox = document.createElement("input");
         checkBox.setAttribute("type", "checkbox");
+        checkBox.setAttribute("class", "checkBox")
         listItem.prepend(checkBox);
 
         checkBox.addEventListener("change", () => {
@@ -31,27 +32,44 @@ function addTask() {
                 listItem.setAttribute("style", "text-decoration-line: none;")
             }
         });
+        
+        
+        const modBtn = document.createElement("button");
+        modBtn.innerHTML = '<i class="gg-pen"></i>'
+        modBtn.setAttribute("id", "taskModBtn");
+        modBtn.setAttribute("title", "Modifier");
+        listItem.append(modBtn);
+
+        const modTask = document.createElement("input");
+        modTask.setAttribute("type", "text");
+        modTask.setAttribute("id", "taskModInput");
+        modTask.setAttribute("placeholder", "Modifier la tâche...");
+
+        const confirmModBtn = document.createElement("button");
+        confirmModBtn.textContent = "Confirmer";
+        confirmModBtn.setAttribute("id", "confirmMod");
+
+
 
         const deleteBtn = document.createElement("button");
         deleteBtn.setAttribute("id", "delTask");
-        deleteBtn.textContent = "Supprimer";
-        listItem.appendChild(deleteBtn);
+        deleteBtn.setAttribute("title", "Supprimer");
+        deleteBtn.innerHTML = '<i class="gg-trash"></i>';
+        listItem.append(deleteBtn);
+
+        modBtn.addEventListener("click", () => {
+            listItem.append(modTask);
+            modTask.append(confirmModBtn);
+        });
 
         deleteBtn.addEventListener("click", () => {
             listItem.remove();
         });
 
-        const modTask = document.createElement("button");
-        modTask = setAttribute("type", "text");
-        modTask = setAttribute("id", "taskInput");
-        modTask.textContent = "Modifier"
-        modTask = setAttribute("placeholder", listItem.textContent);
-        listItem.appendChild(modTask);
 
-        listItem.addEventListener("click", () => {
-            listItem.appendChild(modTask);
-            
-        });
+
+        
+
 
     } else {
         alert("Veuillez entrer une tâche valide.");

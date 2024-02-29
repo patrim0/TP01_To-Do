@@ -1,8 +1,13 @@
 body {
     background-color: rgb(239, 249, 252);
+    background-image: url(../Images/leo_visions-7IvmbaOqMRs-unsplash.jpg);
+                         /*      Source: Unsplash ©Leo_Visions        */
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h1 {
+    color: rgb(239, 254, 255);
     font-family:sans-serif;
     display: flex;
     justify-content: center;
@@ -13,10 +18,13 @@ h1 {
     margin: 50px auto;
     border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: #ffffff;
     box-shadow: 0 0 20px black;
     padding-bottom: 20px;
+    background-color: transparent;
+
 }
+
+
 
 #saisie {
     display: flex;
@@ -24,17 +32,68 @@ h1 {
 }
 
 #taskInput {
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 5px;
 }
 
 #addTaskBtn {
+    background-color: rgb(209, 236, 253);
+    border: none;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 5px;
     margin-left: 20px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+#addTaskBtn:hover {
+    color:#ffffff;
+    background-color: rgb(162, 203, 255);
+    box-shadow: 0 0 5px 1px rgb(162, 229, 255);
+}
+
+#taskModInput {
+    border-radius: 10px;
+    margin: 10px;
 }
 
 #delTask {
-    background-color: red;
-    border-radius: 20px;
+    background-color: rgb(255, 149, 149);
+    border: none;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 5px;
+    height: 10px;
+    width: 10px;
+    padding: 5px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+#delTask:hover {
+    color:#ffffff;
+    background-color: rgb(255, 50, 50);
+    box-shadow: 0 0 5px 1px rgb(255, 166, 107);
+}
+
+#taskModBtn {
+    background-color: rgb(177, 255, 158);
+    border: none;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+#taskModBtn:hover {
+    color:#ffffff;
+    background-color: rgb(52, 160, 48);
+    box-shadow: 0 0 5px 1px rgb(233, 255, 107);
 }
 
 .listContainer {
@@ -42,7 +101,7 @@ h1 {
     margin: 50px auto;
     border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: #ffffff;
+    background-color: transparent;
     box-shadow: 0 0 20px black;
 }
 
@@ -58,4 +117,13 @@ li {
 ul button {
     margin-left: 20px;
     padding: 3px;
+}
+
+.checkBox {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: middle;
+    height: 20px;
+    width: 20px;
+    accent-color: rgb(76, 163, 141);
 }
