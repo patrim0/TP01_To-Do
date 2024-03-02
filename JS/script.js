@@ -1,3 +1,5 @@
+window.onload
+
 const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
@@ -5,6 +7,7 @@ var task = "task";
 var i = 0;
 
 addTaskBtn.addEventListener("click", addTask);
+// Ajoute tâche en appuyant sur Enter
 taskInput.addEventListener("keypress", (mod) => {
     if (mod.key === 'Enter') {
         addTask();
@@ -22,8 +25,9 @@ function addTask() {
         var listItem = document.createElement("li");
 
         listItem.textContent = taskText;
-        listItem.setAttribute("id", "taskText")
+        listItem.setAttribute("id", "taskText".concat(i))
         taskList.appendChild(listItem);
+        localStorage.setItem(task.concat(i), taskText);
         taskInput.value ="";
 
         const checkBox = document.createElement("input");
@@ -31,6 +35,7 @@ function addTask() {
         checkBox.setAttribute("class", "checkBox")
         listItem.prepend(checkBox);
 
+        // Surligne et change l'opacité du texte de tâche
         checkBox.addEventListener("change", () => {
             if (checkBox.checked) {
                 for (let i = 0; i < 2; i++ ) {
@@ -54,6 +59,7 @@ function addTask() {
         modTask.setAttribute("id", "taskModInput");
         modTask.setAttribute("placeholder", "Modifier la tâche...");
 
+
         const confirmModBtn = document.createElement("button");
         confirmModBtn.textContent = "OK";
         confirmModBtn.setAttribute("id", "confirmMod");
@@ -66,10 +72,12 @@ function addTask() {
         deleteBtn.innerHTML = '<img src="../Images/bx trash.png">';
         listItem.append(deleteBtn);
 
+        // Bouton modifier tâche
         modBtn.addEventListener("click", () => {
             listItem.append(modTask);
             listItem.append(confirmModBtn);
-
+            
+            // Confirmer modification en appuyant sur Enter
             modTask.addEventListener("keypress", (mod) => {
                 if (mod.key === 'Enter') {
                     listItem.textContent = modTask.value;
@@ -79,6 +87,7 @@ function addTask() {
                 }
             });
 
+            // Confirmer modification en cliquant sur le bouton
             confirmModBtn.addEventListener("click", () => {
                     listItem.textContent = modTask.value;
                     listItem.prepend(checkBox);
@@ -87,26 +96,24 @@ function addTask() {
 
             });
         });
-
+        
+        // Supprimer tâche
         deleteBtn.addEventListener("click", () => {
             listItem.remove();
-            localStorage.removeItem();
+            localStorage.remove();
         });
-
-
-
-        
-
 
     } else {
         alert("Veuillez entrer une tâche valide.");
     }
 
-localStorage.setItem(task.concat(i), taskText);
+    // Bouton pour réinitialiser local storage
+    document.getElementById("clear").addEventListener("click", () => {
+        listItem.remove();
+        localStorage.clear();
+        i = 0
+    });
+
+
 i++
-document.getElementById("clear").addEventListener("click", () => {
-    listItem.remove();
-    localStorage.clear();
-    i = 0
-});
 }

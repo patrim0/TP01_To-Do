@@ -31,4 +31,3 @@ rapidement des tâches spécifiques en fonction de leur contenu.~~
 10. **TODO** <br> Amélioration de l'interface utilisateur : Ajout d'animations, de transitions et d'autres éléments d'interface
 utilisateur pour rendre l'application plus conviviale et attrayante.
 ---
-Installer XAMPP à la maison
